@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mike Joshua Muni — Senior Creative Director</title>
+    <meta name="description"
+        content="Senior Graphic Designer & Creative Director. Founder of MNMK Studio. 8+ years spanning brand, campaigns, design systems, and AI-augmented creative practice.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <style>
+        :root {
+            --mnmk-red: #FF0000;
+            --mnmk-black: #000000;
+            --mnmk-white: #FFFFFF;
+            --mnmk-deep: #1A1A1A;
+            --mnmk-grey: #3D3D3D;
+            --mnmk-mid: #6B6B6B;
+            --mnmk-light: #A8A8A8;
+            --mnmk-faint: #D4D4D4;
+            --mnmk-surface: #F7F7F7;
+            --mnmk-border: #E8E8E8;
+            --sp-xs: 4px;
+            --sp-sm: 8px;
+            --sp-md: 16px;
+            --sp-lg: 24px;
+            --sp-xl: 32px;
+            --sp-2xl: 48px;
+            --sp-3xl: 64px;
+            --r-sm: 6px;
+            --r-md: 10px;
+            --r-lg: 14px;
+            --r-xl: 18px;
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, .06), 0 1px 2px rgba(0, 0, 0, .04);
+            --shadow-md: 0 4px 16px rgba(0, 0, 0, .08);
+            --t-xs: clamp(0.67rem, 1vw, 0.72rem);
+            --t-sm: clamp(0.78rem, 1.2vw, 0.85rem);
+            --t-base: clamp(0.88rem, 1.5vw, 0.95rem);
+            --t-lg: clamp(1rem, 1.8vw, 1.1rem);
+            --t-xl: clamp(1.2rem, 2.5vw, 1.4rem);
+            --t-2xl: clamp(1.6rem, 3.5vw, 2.2rem);
+            --t-3xl: clamp(2rem, 5vw, 2.8rem);
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: var(--t-base);
+            background: var(--mnmk-white);
+            color: var(--mnmk-grey);
+            line-height: 1.65;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1440px;
+            margin: 0 auto;
+            padding: 0 var(--sp-lg);
+        }
+
+        @media(min-width:1280px) {
+            .container {
+                padding: 0 var(--sp-3xl);
+            }
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(12px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .spin {
+            animation: spin 5s linear infinite;
+            display: inline-block;
+        }
+
+        .anim {
+            opacity: 0;
+            animation: fadeUp .5s ease forwards;
+        }
+
+        .a1 {
+            animation-delay: .04s
+        }
+
+        .a2 {
+            animation-delay: .14s
+        }
+
+        .a3 {
+            animation-delay: .26s
+        }
+
+        .a4 {
+            animation-delay: .40s
+        }
+
+        .a5 {
+            animation-delay: .54s
+        }
+
+        .a6 {
+            animation-delay: .68s
+        }
+
+        .card {
+            background: var(--mnmk-white);
+            border: 1px solid var(--mnmk-border);
+            border-radius: var(--r-xl);
+            box-shadow: var(--shadow-sm);
+            padding: var(--sp-lg);
+        }
+
+        .label {
+            font-size: var(--t-xs);
+            font-weight: 700;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            color: var(--mnmk-light);
+            margin-bottom: var(--sp-md);
+        }
+
+        .tag {
+            display: inline-flex;
+            align-items: center;
+            font-size: var(--t-xs);
+            font-weight: 500;
+            padding: var(--sp-xs) 9px;
+            border-radius: var(--r-sm);
+            margin: 2px;
+            line-height: 1.3;
+        }
+
+        .tag-light {
+            background: var(--mnmk-surface);
+            color: var(--mnmk-deep);
+        }
+
+        .tag-dark {
+            background: var(--mnmk-deep);
+            color: var(--mnmk-white);
+            font-family: "SF Mono", "Fira Code", monospace;
+            font-size: 0.65rem;
+        }
+
+        .role {
+            padding-left: var(--sp-lg);
+            border-left: 2px solid var(--mnmk-border);
+            position: relative;
+            transition: border-color .2s;
+        }
+
+        .role::before {
+            content: '';
+            position: absolute;
+            left: -5px;
+            top: 7px;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--mnmk-border);
+            transition: background .2s, transform .2s;
+        }
+
+        .role.current::before {
+            background: var(--mnmk-red);
+        }
+
+        .role:hover {
+            border-color: var(--mnmk-red);
+        }
+
+        .role:hover::before {
+            background: var(--mnmk-red);
+            transform: scale(1.25);
+        }
+
+        .role-header {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: var(--sp-sm);
+            margin-bottom: var(--sp-sm);
+        }
+
+        .role-co {
+            font-size: var(--t-base);
+            font-weight: 700;
+            color: var(--mnmk-black);
+        }
+
+        .role-pos {
+            font-size: var(--t-xs);
+            color: var(--mnmk-mid);
+            font-weight: 500;
+            margin-top: 1px;
+        }
+
+        .role-date {
+            font-size: var(--t-xs);
+            color: var(--mnmk-light);
+            white-space: nowrap;
+            padding-top: 2px;
+        }
+
+        .role-bullets {
+            list-style: none;
+        }
+
+        .role-bullets li {
+            font-size: var(--t-sm);
+            color: var(--mnmk-mid);
+            line-height: 1.7;
+            padding-left: var(--sp-md);
+            position: relative;
+            margin-bottom: var(--sp-xs);
+        }
+
+        .role-bullets li::before {
+            content: '—';
+            position: absolute;
+            left: 0;
+            color: var(--mnmk-faint);
+            font-weight: 300;
+        }
+
+        .prof {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: var(--sp-sm);
+            margin-bottom: 10px;
+        }
+
+        .prof-lbl {
+            font-size: var(--t-xs);
+            color: var(--mnmk-deep);
+            font-weight: 500;
+            min-width: 80px;
+        }
+
+        .prof-track {
+            flex: 1;
+            height: 3px;
+            background: var(--mnmk-border);
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .prof-fill {
+            height: 100%;
+            border-radius: 2px;
+            background: var(--mnmk-red);
+        }
+
+        .prof-lvl {
+            font-size: var(--t-xs);
+            color: var(--mnmk-light);
+            min-width: 64px;
+            text-align: right;
+        }
+
+        .icon-btn {
+            width: 40px;
+            height: 40px;
+            min-width: 40px;
+            min-height: 40px;
+            background: var(--mnmk-white);
+            border: 1px solid var(--mnmk-border);
+            border-radius: var(--r-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: box-shadow .2s, transform .15s, border-color .15s;
+            cursor: pointer;
+        }
+
+        .icon-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--mnmk-faint);
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--sp-sm);
+            min-height: 44px;
+            padding: 10px 22px;
+            background: var(--mnmk-black);
+            color: var(--mnmk-white);
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: var(--t-sm);
+            font-weight: 700;
+            border-radius: var(--r-md);
+            text-decoration: none;
+            letter-spacing: .01em;
+            transition: background .2s, gap .2s, transform .15s;
+        }
+
+        .btn-primary:hover {
+            background: #1A1A1A;
+            gap: 12px;
+            transform: translateY(-1px);
+        }
+
+        .btn-ghost {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            min-height: 44px;
+            padding: 10px 18px;
+            border: 1.5px solid var(--mnmk-border);
+            color: var(--mnmk-grey);
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: var(--t-sm);
+            font-weight: 500;
+            border-radius: var(--r-md);
+            text-decoration: none;
+            transition: border-color .2s, color .2s;
+        }
+
+        .btn-ghost:hover {
+            border-color: var(--mnmk-deep);
+            color: var(--mnmk-black);
+        }
+
+        .stat-n {
+            font-size: var(--t-xl);
+            font-weight: 800;
+            color: var(--mnmk-red);
+            line-height: 1;
+        }
+
+        .stat-d {
+            font-size: var(--t-xs);
+            color: var(--mnmk-mid);
+            margin-top: 2px;
+        }
+
+        .grid-golden {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--sp-xl);
+        }
+
+        @media(min-width:1024px) {
+            .grid-golden {
+                grid-template-columns: 62fr 38fr;
+                gap: var(--sp-2xl);
+            }
+        }
+
+        @media(min-width:1024px) {
+            .sticky-col {
+                position: sticky;
+                top: var(--sp-lg);
+                align-self: start;
+            }
+        }
+
+        .cert-item {
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+        }
+
+        .client-list {
+            font-size: var(--t-xs);
+            color: var(--mnmk-light);
+            line-height: 1.8;
+        }
+
+        .hero-img {
+            width: 100%;
+            object-fit: cover;
+            object-position: center;
+            border-radius: var(--r-xl);
+            height: 260px;
+        }
+
+        @media(min-width:768px) {
+            .hero-img {
+                height: 320px;
+            }
+        }
+
+        @media(min-width:1280px) {
+            .hero-img {
+                height: 360px;
+            }
+        }
+
+        .contact-link {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: var(--t-xs);
+            color: var(--mnmk-mid);
+            text-decoration: none;
+            transition: color .15s;
+        }
+
+        .contact-link:hover {
+            color: var(--mnmk-red);
+        }
+    </style>
+</head>
+
+<body>
+    <article style="padding:48px 0">
+        <div class="container">
+
+            <!-- HEADER -->
+            <header style="display:flex;justify-content:space-between;align-items:center;margin-bottom:32px;"
+                class="anim a1">
+                <div style="display:flex;align-items:center;gap:8px;">
+                    <span style="color:var(--mnmk-red);font-size:1.1rem;" class="spin">✱</span>
+                    <span class="label" style="margin-bottom:0;">Portfolio</span>
+                </div>
+                <nav style="display:flex;gap:8px;" aria-label="Social links">
+                    <a href="https://www.linkedin.com/in/mikejoshuamuni" target="_blank" rel="noopener noreferrer"
+                        aria-label="LinkedIn" class="icon-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none"
+                            stroke="#0A66C2" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                            <rect width="4" height="12" x="2" y="9" />
+                            <circle cx="4" cy="4" r="2" />
+                        </svg>
+                    </a>
+                    <a href="mailto:mikeatwork98@gmail.com" aria-label="Email" class="icon-btn">
+                        <i data-lucide="mail"
+                            style="width:15px;height:15px;stroke:var(--mnmk-grey);stroke-width:1.75;"></i>
+                    </a>
+                    <a href="tel:+639667459127" aria-label="Phone" class="icon-btn">
+                        <i data-lucide="phone"
+                            style="width:15px;height:15px;stroke:var(--mnmk-grey);stroke-width:1.75;"></i>
+                    </a>
+                </nav>
+            </header>
+
+            <!-- HERO IMAGE -->
+            <div class="anim a2" style="position:relative;margin-bottom:32px;">
+                <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1400&auto=format&fit=crop&q=80"
+                    alt="Mike Joshua Muni — Creative Studio" class="hero-img">
+                <div
+                    style="position:absolute;inset:0;border-radius:var(--r-xl);background:linear-gradient(to right,rgba(0,0,0,.75) 0%,rgba(0,0,0,.3) 55%,transparent 100%);">
+                </div>
+                <div style="position:absolute;bottom:28px;left:28px;">
+                    <p
+                        style="font-size:var(--t-xs);font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--mnmk-red);margin-bottom:6px;">
+                        MNMK Studio · ResultsCX · Freelance</p>
+                    <h1
+                        style="font-size:var(--t-2xl);font-weight:900;color:var(--mnmk-white);line-height:1.1;letter-spacing:-.02em;">
+                        Mike Joshua Muni</h1>
+                    <p style="font-size:var(--t-sm);color:rgba(255,255,255,.7);margin-top:4px;">Senior Graphic Designer
+                        &amp; Creative Director</p>
+                </div>
+                <div style="position:absolute;top:20px;right:20px;background:rgba(255,255,255,.1);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.2);border-radius:var(--r-lg);padding:10px 16px;text-align:right;"
+                    id="badge">
+                    <p style="color:var(--mnmk-white);font-size:var(--t-xs);font-weight:600;">Creative Services
+                        Specialist</p>
+                    <p style="color:rgba(255,255,255,.55);font-size:0.63rem;margin-top:2px;">ResultsCX · May 2025 –
+                        Present</p>
+                </div>
+            </div>
+
+            <!-- STATS ROW -->
+            <div class="anim a2"
+                style="display:flex;flex-wrap:wrap;gap:32px;align-items:center;padding:16px 0;border-bottom:1px solid var(--mnmk-border);margin-bottom:48px;">
+                <div>
+                    <p class="stat-n">8+</p>
+                    <p class="stat-d">Years of experience</p>
+                </div>
+                <div style="width:1px;height:32px;background:var(--mnmk-border);"></div>
+                <div>
+                    <p class="stat-n">50+</p>
+                    <p class="stat-d">Global brands served</p>
+                </div>
+                <div style="width:1px;height:32px;background:var(--mnmk-border);"></div>
+                <div>
+                    <p class="stat-n">300mWp</p>
+                    <p class="stat-d">Solar projects supported</p>
+                </div>
+                <div style="width:1px;height:32px;background:var(--mnmk-border);"></div>
+                <div>
+                    <p class="stat-n">7 yrs</p>
+                    <p class="stat-d">Freelance track record</p>
+                </div>
+            </div>
+
+            <!-- GOLDEN RATIO GRID -->
+            <div class="grid-golden">
+
+                <!-- LEFT COLUMN -->
+                <div>
+
+                    <!-- Summary -->
+                    <div class="anim a3" style="margin-bottom:48px;">
+                        <h2
+                            style="font-size:var(--t-3xl);font-weight:900;color:var(--mnmk-black);line-height:1.08;letter-spacing:-.025em;margin-bottom:24px;">
+                            Design systems that scale.<br>
+                            <span style="color:var(--mnmk-red);">Creative that closes.</span>
+                        </h2>
+                        <p style="font-size:var(--t-base);color:var(--mnmk-mid);line-height:1.75;max-width:620px;">
+                            Senior creative professional with 8+ years spanning graphic design, brand communications,
+                            and creative direction. Founder of MNMK Studio, trusted by 50+ brands globally. Known for
+                            design systems that scale, sales materials that close, and campaign creative delivered at
+                            speed. Now at the forefront of AI-augmented practice — using generative AI as a co-pilot to
+                            unlock faster concept development, sharper strategy, and bolder creative outcomes.
+                        </p>
+                    </div>
+
+                    <!-- Experience heading -->
+                    <div class="anim a4">
+                        <p class="label">Work Experience</p>
+                        <div style="display:flex;flex-direction:column;gap:32px;">
+
+                            <!-- ResultsCX -->
+                            <div class="role current">
+                                <div class="role-header">
+                                    <div>
+                                        <p class="role-co">ResultsCX</p>
+                                        <p class="role-pos">Creative Services Specialist · Philippines (In-house)</p>
+                                    </div>
+                                    <span class="role-date">May 2025 – Present</span>
+                                </div>
+                                <ul class="role-bullets">
+                                    <li>Serve as the in-house creative services specialist for internal and external
+                                        communications, producing design assets that support company-wide messaging,
+                                        employee engagement, and B2B brand presence.</li>
+                                    <li>Design and produce LinkedIn content and social media marketing materials for
+                                        external brand communications, driving consistent professional visibility across
+                                        digital channels.</li>
+                                    <li>Develop high-impact sales presentation decks and pitch materials that have
+                                        directly supported client acquisition and new business onboarding, translating
+                                        complex service propositions into clear, persuasive visual narratives.</li>
+                                    <li>Produce print collateral for client visits and corporate engagements, ensuring
+                                        every physical touchpoint reflects the brand's enterprise standards.</li>
+                                    <li>Support the creation of sales reports and data visualisation materials,
+                                        presenting commercial performance in a format that is both executive-ready and
+                                        visually compelling.</li>
+                                    <li>Active contributor to the company's Design Architecture, proactively pitching
+                                        and implementing improvements to design templates and creative systems, driving
+                                        scalability, faster campaign turnaround, and stronger consistency across team
+                                        output.</li>
+                                    <li>Act as the go-to solutions provider for fast-turnaround campaigns, balancing
+                                        creative quality with the operational speed required in a high-volume,
+                                        client-facing environment.</li>
+                                    <li>Integrate AI technology as a creative co-pilot across the design workflow,
+                                        leveraging generative and assistive AI tools to accelerate concept development,
+                                        sharpen content strategy, and surface out-of-the-box campaign directions that
+                                        challenge conventional thinking.</li>
+                                </ul>
+                            </div>
+
+                            <!-- Next Level Accountants -->
+                            <div class="role current">
+                                <div class="role-header">
+                                    <div>
+                                        <p class="role-co">Next Level Accountants</p>
+                                        <p class="role-pos">Digital Designer · Victoria, Australia (Remote)</p>
+                                    </div>
+                                    <span class="role-date">Feb 2024 – Present</span>
+                                </div>
+                                <ul class="role-bullets">
+                                    <li>Own and manage the monthly digital design pipeline, producing marketing
+                                        materials across digital and print channels to consistent, deadline-driven
+                                        delivery standards.</li>
+                                    <li>Lead the design and deployment of responsive email newsletters via Klaviyo,
+                                        optimised for both web and mobile performance.</li>
+                                    <li>Develop and present design concepts and visual mockups for stakeholder review,
+                                        iterating based on feedback to ensure the final output is on-brand and
+                                        commercially effective.</li>
+                                </ul>
+                            </div>
+
+                            <!-- Cinag Power -->
+                            <div class="role current">
+                                <div class="role-header">
+                                    <div>
+                                        <p class="role-co">Cinag Power Philippines</p>
+                                        <p class="role-pos">Brand &amp; Digital Designer · Freelance · Philippines</p>
+                                    </div>
+                                    <span class="role-date">Jan 2025 – Present</span>
+                                </div>
+                                <ul class="role-bullets">
+                                    <li>Developed and maintain the company's WordPress website, ensuring a professional,
+                                        high-performance digital presence aligned with the brand's enterprise
+                                        positioning in the renewable energy sector.</li>
+                                    <li>Created the full brand identity system including logo, graphic devices, and
+                                        visual language, establishing a cohesive and credible identity for client-facing
+                                        and project acquisition contexts.</li>
+                                    <li>Produced sales and marketing materials for high-value project pitches, including
+                                        company profiles, event marketing collateral, and social media campaigns,
+                                        directly supporting the acquisition of solar projects ranging from 200kWp to
+                                        300mWp.</li>
+                                    <li>Contributed to revenue-generating outcomes through design-led sales enablement —
+                                        collateral that supported project closures and reinforced brand credibility at
+                                        enterprise scale.</li>
+                                </ul>
+                            </div>
+
+                            <!-- OSIM -->
+                            <div class="role">
+                                <div class="role-header">
+                                    <div>
+                                        <p class="role-co">OSIM Singapore Ltd / LAC PH</p>
+                                        <p class="role-pos">Graphic Artist · Pasig, Philippines</p>
+                                    </div>
+                                    <span class="role-date">Nov 2024 – Mar 2025</span>
+                                </div>
+                                <ul class="role-bullets">
+                                    <li>Managed a high-volume design request pipeline across multi-channel sales
+                                        operations, covering product detail pages, social media assets, email
+                                        newsletters, and promotional advertisements, with consistent regional campaign
+                                        delivery.</li>
+                                    <li>Produced campaign materials from initial concept to final approved output,
+                                        strictly adhering to brand guidelines and technical specifications: responsive
+                                        screen sizes, pre-press print-ready files.</li>
+                                    <li>Partnered with Marketing, Sales, and E-commerce teams to ensure visual execution
+                                        was aligned with product launches and seasonal campaign goals.</li>
+                                    <li>Built a library of reusable design templates for recurring campaign formats,
+                                        reducing production time and strengthening output consistency across the team.
+                                    </li>
+                                    <li>Elevated website banner and product tile visuals to improve user experience and
+                                        maintain brand cohesion across digital channels.</li>
+                                    <li>Ran A/B creative tests across ad formats, using performance data to guide visual
+                                        refinements and improve campaign engagement.</li>
+                                </ul>
+                            </div>
+
+                            <!-- Mobisolar -->
+                            <div class="role">
+                                <div class="role-header">
+                                    <div>
+                                        <p class="role-co">Mobisolar Philippines Inc.</p>
+                                        <p class="role-pos">Senior Graphic Designer · Mandaluyong, Philippines</p>
+                                    </div>
+                                    <span class="role-date">May 2024 – Nov 2024</span>
+                                </div>
+                                <ul class="role-bullets">
+                                    <li>Spearheaded the development of corporate branding strategies, building cohesive
+                                        visual identity systems aligned with the company's business objectives and
+                                        growth targets.</li>
+                                    <li>Created brand identity assets including logos, marks, and guidelines that
+                                        delivered consistent, high-recognition communication across all customer
+                                        touchpoints.</li>
+                                    <li>Produced a full-spectrum marketing collateral suite across both offline (print,
+                                        out-of-home) and online (digital banners, social, email) channels.</li>
+                                    <li>Managed e-commerce visual content to strengthen brand perception and support
+                                        product conversion performance.</li>
+                                    <li>Directed photo and video production to fuel marketing campaigns across multiple
+                                        distribution platforms.</li>
+                                    <li>Created high-performing visual content for organic social and paid media,
+                                        contributing to measurable improvements in brand reach and audience engagement.
+                                    </li>
+                                    <li>Collaborated cross-functionally with Marketing and Sales to ensure creative
+                                        output was integrated with and actively supported wider commercial strategy.
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <!-- MNMK Studio -->
+                            <div class="role current">
+                                <div class="role-header">
+                                    <div>
+                                        <p class="role-co">MNMK Studio</p>
+                                        <p class="role-pos">Founder &amp; Executive Producer · Manila, Philippines</p>
+                                    </div>
+                                    <span class="role-date">June 2023 – Present</span>
+                                </div>
+                                <ul class="role-bullets">
+                                    <li>Founded and continue to lead MNMK Studio, a full-service creative production
+                                        house delivering design, video, and event media solutions for clients across the
+                                        Philippines.</li>
+                                    <li>Direct all creative output from initial briefing and strategic concept through
+                                        to production, quality control, and final delivery across design, digital, and
+                                        live event formats.</li>
+                                    <li>Manage client relationships, supplier partnerships, and a network of specialist
+                                        creative collaborators to ensure multi-discipline projects are delivered to
+                                        scope, deadline, and quality standard.</li>
+                                    <li>Drive new business development through direct pitching, client onboarding, and
+                                        relationship-led retention, building a portfolio of repeat clients through
+                                        consistent creative excellence.</li>
+                                </ul>
+                            </div>
+
+                            <!-- Freelancer -->
+                            <div class="role">
+                                <div class="role-header">
+                                    <div>
+                                        <p class="role-co">Freelancer</p>
+                                        <p class="role-pos">Multimedia Designer · Paranaque, Philippines</p>
+                                    </div>
+                                    <span class="role-date">July 2018 – Present</span>
+                                </div>
+                                <ul class="role-bullets">
+                                    <li>Delivered 360° creative solutions for 50+ clients globally, spanning brand
+                                        identity, print, social media campaigns, and video production, building each
+                                        engagement around the client's brand strategy and audience goals.</li>
+                                    <li>Collaborated with global and regional brands to develop visual assets across
+                                        logos, product packaging, digital advertisements, and animated content,
+                                        calibrated to diverse market requirements and cultural contexts.</li>
+                                </ul>
+                                <p
+                                    style="margin-top:8px;font-size:var(--t-xs);font-weight:600;color:var(--mnmk-deep);margin-bottom:4px;">
+                                    Client portfolio includes:</p>
+                                <p class="client-list">Havaianas · Toyota Manila Bay Group (Dasmarinas) · Watsons SM
+                                    Pampanga · AMD Philippines · Gold Seas Philippines · A-plus Paints · Casa Sarsa ·
+                                    Stageworks · FSOTD NYC · Nightlust · Skoop · Aratum Philippines · Camera Commons ·
+                                    Nutrafinity · The Brewed Buddies · Gourmet Farms · and others</p>
+                            </div>
+
+                            <!-- GoCommerce -->
+                            <div class="role">
+                                <div class="role-header">
+                                    <div>
+                                        <p class="role-co">GoCommerce Asia</p>
+                                        <p class="role-pos">Graphic Designer · Pasig, Philippines</p>
+                                    </div>
+                                    <span class="role-date">April 2022 – May 2023</span>
+                                </div>
+                                <ul class="role-bullets">
+                                    <li>Designed and executed digital and print marketing campaigns that translated each
+                                        brand's value proposition into compelling, conversion-focused visual assets.
+                                    </li>
+                                    <li>Managed full storefront visual design across Lazada, Shopee, and Shopify,
+                                        ensuring brand consistency, visual hierarchy, and a smooth shopping experience.
+                                    </li>
+                                    <li>Collaborated with Marketing, Sales, and E-commerce teams on ongoing store design
+                                        improvements and seasonal campaign rollouts.</li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Specialisations -->
+                    <div class="anim a5" style="margin-top:48px;">
+                        <p class="label">Specialisations</p>
+                        <div>
+                            <span class="tag tag-light">Graphic Design</span>
+                            <span class="tag tag-light">Brand Identity &amp; Design Systems</span>
+                            <span class="tag tag-light">Campaign Design</span>
+                            <span class="tag tag-light">Video Production &amp; Editing</span>
+                            <span class="tag tag-light">Print Production</span>
+                            <span class="tag tag-light">UI Design</span>
+                            <span class="tag tag-light">Ecommerce Design</span>
+                            <span class="tag tag-light">Design Systems Architecture</span>
+                            <span class="tag tag-light">AI-Augmented Creative Workflows</span>
+                            <span class="tag tag-light">Internal &amp; External Communications</span>
+                            <span class="tag tag-light">Sales Enablement Design</span>
+                            <span class="tag tag-light">WordPress Development</span>
+                            <span class="tag tag-light">Photography</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RIGHT SIDEBAR -->
+                <div class="sticky-col anim a3" style="display:flex;flex-direction:column;gap:24px;">
+
+                    <!-- Identity -->
+                    <div class="card">
+                        <p
+                            style="font-size:var(--t-sm);font-weight:800;color:var(--mnmk-red);letter-spacing:.02em;margin-bottom:2px;">
+                            MIKE JOSHUA MUNI</p>
+                        <p style="font-size:var(--t-xs);color:var(--mnmk-mid);margin-bottom:1px;">Senior Graphic
+                            Designer &amp; Creative Director</p>
+                        <p style="font-size:var(--t-xs);color:var(--mnmk-light);margin-bottom:16px;">Founder, MNMK
+                            Studio · Paranaque, PH</p>
+                        <div style="display:flex;flex-direction:column;gap:7px;">
+                            <a href="mailto:mikeatwork98@gmail.com" class="contact-link">
+                                <i data-lucide="mail"
+                                    style="width:12px;height:12px;stroke-width:1.75;flex-shrink:0;"></i>
+                                mikeatwork98@gmail.com
+                            </a>
+                            <a href="tel:+639667459127" class="contact-link">
+                                <i data-lucide="phone"
+                                    style="width:12px;height:12px;stroke-width:1.75;flex-shrink:0;"></i>
+                                +63 966 745 9127
+                            </a>
+                            <a href="https://www.linkedin.com/in/mikejoshuamuni" target="_blank" class="contact-link">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"
+                                    stroke-linejoin="round" style="flex-shrink:0;">
+                                    <path
+                                        d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                                    <rect width="4" height="12" x="2" y="9" />
+                                    <circle cx="4" cy="4" r="2" />
+                                </svg>
+                                LinkedIn Profile
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Adobe CC -->
+                    <div class="card">
+                        <p class="label">Adobe Creative Cloud</p>
+                        <div class="prof"><span class="prof-lbl">Photoshop</span>
+                            <div class="prof-track">
+                                <div class="prof-fill" style="width:93%"></div>
+                            </div><span class="prof-lvl">Expert</span>
+                        </div>
+                        <div class="prof"><span class="prof-lbl">Illustrator</span>
+                            <div class="prof-track">
+                                <div class="prof-fill" style="width:93%"></div>
+                            </div><span class="prof-lvl">Expert</span>
+                        </div>
+                        <div class="prof"><span class="prof-lbl">InDesign</span>
+                            <div class="prof-track">
+                                <div class="prof-fill" style="width:90%"></div>
+                            </div><span class="prof-lvl">Expert</span>
+                        </div>
+                        <div class="prof"><span class="prof-lbl">Premiere Pro</span>
+                            <div class="prof-track">
+                                <div class="prof-fill" style="width:78%"></div>
+                            </div><span class="prof-lvl">Advanced</span>
+                        </div>
+                        <div class="prof"><span class="prof-lbl">After Effects</span>
+                            <div class="prof-track">
+                                <div class="prof-fill" style="width:74%"></div>
+                            </div><span class="prof-lvl">Advanced</span>
+                        </div>
+                        <div class="prof"><span class="prof-lbl">Audition</span>
+                            <div class="prof-track">
+                                <div class="prof-fill" style="width:56%"></div>
+                            </div><span class="prof-lvl">Intermediate</span>
+                        </div>
+                    </div>
+
+                    <!-- Tools -->
+                    <div class="card">
+                        <p class="label">Tools &amp; Platforms</p>
+                        <p
+                            style="font-size:0.62rem;color:var(--mnmk-light);text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px;">
+                            Design &amp; Publishing</p>
+                        <div style="margin-bottom:16px;">
+                            <span class="tag tag-light">Figma</span>
+                            <span class="tag tag-light">Framer</span>
+                            <span class="tag tag-light">Klaviyo</span>
+                            <span class="tag tag-light">WordPress</span>
+                            <span class="tag tag-light">MS Office</span>
+                        </div>
+                        <p
+                            style="font-size:0.62rem;color:var(--mnmk-light);text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px;">
+                            AI &amp; Developer Tools</p>
+                        <div>
+                            <span class="tag tag-dark">Claude Code</span>
+                            <span class="tag tag-dark">Antigravity</span>
+                            <span class="tag tag-dark">Cursor IDE</span>
+                            <span class="tag tag-dark">Gemini CLI</span>
+                        </div>
+                    </div>
+
+                    <!-- Education -->
+                    <div class="card">
+                        <p class="label">Education</p>
+                        <p style="font-size:var(--t-sm);font-weight:700;color:var(--mnmk-black);margin-bottom:2px;">FEU
+                            Institute of Technology</p>
+                        <p style="font-size:var(--t-xs);color:var(--mnmk-mid);margin-bottom:1px;">BS Information
+                            Technology, Major in Digital Arts</p>
+                        <p style="font-size:var(--t-xs);color:var(--mnmk-light);margin-bottom:16px;">2020 · Sampaloc,
+                            Manila</p>
+                        <div
+                            style="background:var(--mnmk-surface);border:1px solid var(--mnmk-border);border-radius:var(--r-md);padding:16px;">
+                            <p
+                                style="font-size:0.62rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--mnmk-light);margin-bottom:4px;">
+                                Thesis</p>
+                            <p style="font-size:var(--t-xs);color:var(--mnmk-mid);line-height:1.65;font-style:italic;">
+                                Subscription-Based Meal Ordering System with Body Analyzer for Personalised Meal Plan
+                                Recommendations using Random Forest Classifier</p>
+                        </div>
+                    </div>
+
+                    <!-- Certifications -->
+                    <div class="card">
+                        <p class="label">Certifications</p>
+                        <div style="display:flex;flex-direction:column;gap:16px;">
+                            <div class="cert-item">
+                                <i data-lucide="award"
+                                    style="width:16px;height:16px;stroke:var(--mnmk-red);stroke-width:1.75;flex-shrink:0;margin-top:1px;"></i>
+                                <div>
+                                    <p
+                                        style="font-size:var(--t-xs);font-weight:600;color:var(--mnmk-black);margin-bottom:1px;">
+                                        AI Fluency Framework &amp; Foundations</p>
+                                    <p style="font-size:0.63rem;color:var(--mnmk-light);">Anthropic · March 2026</p>
+                                    <p
+                                        style="font-size:0.63rem;color:var(--mnmk-faint);font-family:monospace;margin-top:1px;">
+                                        bwoa5wtdhzzt</p>
+                                </div>
+                            </div>
+                            <div class="cert-item">
+                                <i data-lucide="award"
+                                    style="width:16px;height:16px;stroke:var(--mnmk-red);stroke-width:1.75;flex-shrink:0;margin-top:1px;"></i>
+                                <div>
+                                    <p
+                                        style="font-size:var(--t-xs);font-weight:600;color:var(--mnmk-black);margin-bottom:1px;">
+                                        UX+ Conference 2025</p>
+                                    <p style="font-size:0.63rem;color:var(--mnmk-light);">UX+ · September 2025</p>
+                                    <p
+                                        style="font-size:0.63rem;color:var(--mnmk-faint);font-family:monospace;margin-top:1px;">
+                                        UXP_DJXDL4_20250914</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- References -->
+                    <div class="card">
+                        <p class="label">Character References</p>
+                        <div style="display:flex;flex-direction:column;gap:16px;">
+                            <div>
+                                <p
+                                    style="font-size:var(--t-xs);font-weight:700;color:var(--mnmk-black);margin-bottom:2px;">
+                                    Nicolo Nimor (Nick Automatic)</p>
+                                <p style="font-size:var(--t-xs);color:var(--mnmk-mid);">Head of Design</p>
+                                <a href="tel:+639275972666"
+                                    style="font-size:var(--t-xs);color:var(--mnmk-light);text-decoration:none;">+63 927
+                                    597 2666</a>
+                            </div>
+                            <div>
+                                <p
+                                    style="font-size:var(--t-xs);font-weight:700;color:var(--mnmk-black);margin-bottom:2px;">
+                                    Lyndon Russell, FIFA FFA</p>
+                                <p style="font-size:var(--t-xs);color:var(--mnmk-mid);">Business Adviser &amp; Director
+                                    (AU)</p>
+                                <a href="tel:+61409648275"
+                                    style="font-size:var(--t-xs);color:var(--mnmk-light);text-decoration:none;">0409 648
+                                    275</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CTA -->
+                    <div class="anim a6" style="display:flex;flex-direction:column;gap:8px;">
+                        <p style="font-size:var(--t-sm);font-weight:600;color:var(--mnmk-black);line-height:1.5;">Ready
+                            to build something that moves the business forward?</p>
+                        <div style="display:flex;flex-wrap:wrap;gap:8px;">
+                            <a href="mailto:mikeatwork98@gmail.com" class="btn-primary">
+                                Let's Collaborate
+                                <i data-lucide="arrow-right" style="width:14px;height:14px;stroke-width:2.5;"></i>
+                            </a>
+                            <a href="https://drive.google.com/file/d/YOUR_CV_FILE_ID" target="_blank" class="btn-ghost">
+                                Download CV
+                                <i data-lucide="download" style="width:13px;height:13px;stroke-width:2;"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </article>
+    <script>
+        lucide.createIcons();
+        const badge = document.getElementById('badge');
+        function checkBadge() { badge.style.display = window.innerWidth >= 640 ? 'block' : 'none'; }
+        checkBadge();
+        window.addEventListener('resize', checkBadge);
+    </script>
+</body>
+
+</html>
