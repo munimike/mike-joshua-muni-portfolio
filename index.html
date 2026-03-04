@@ -470,8 +470,10 @@
             </header>
 
             <!-- HERO IMAGE -->
+            <!-- To update: place hero.jpg inside /img/ folder OR set HERO_SRC in config below -->
             <div class="anim a2" style="position:relative;margin-bottom:32px;">
-                <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1400&auto=format&fit=crop&q=80"
+                <img id="hero-img" src="img/hero.jpg"
+                    onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1497366216548-37526070297c?w=1400&auto=format&fit=crop&q=80'"
                     alt="Mike Joshua Muni — Creative Studio" class="hero-img">
                 <div
                     style="position:absolute;inset:0;border-radius:var(--r-xl);background:linear-gradient(to right,rgba(0,0,0,.75) 0%,rgba(0,0,0,.3) 55%,transparent 100%);">
@@ -792,6 +794,18 @@
 
                     <!-- Identity -->
                     <div class="card">
+                        <!-- Profile photo: place profile.jpg inside /img/ folder -->
+                        <div style="margin-bottom:14px;">
+                            <img id="profile-img" src="img/profile.jpg"
+                                onerror="this.onerror=null;this.style.display='none';document.getElementById('profile-placeholder').style.display='flex';"
+                                alt="Mike Joshua Muni"
+                                style="width:72px;height:72px;border-radius:50%;object-fit:cover;object-position:center;border:2px solid var(--mnmk-border);display:block;">
+                            <div id="profile-placeholder"
+                                style="display:none;width:72px;height:72px;border-radius:50%;background:var(--mnmk-surface);border:2px dashed var(--mnmk-border);align-items:center;justify-content:center;">
+                                <i data-lucide="user"
+                                    style="width:28px;height:28px;stroke:var(--mnmk-faint);stroke-width:1.5;"></i>
+                            </div>
+                        </div>
                         <p
                             style="font-size:var(--t-sm);font-weight:800;color:var(--mnmk-red);letter-spacing:.02em;margin-bottom:2px;">
                             MIKE JOSHUA MUNI</p>
@@ -974,6 +988,11 @@
                             <a href="https://drive.google.com/file/d/YOUR_CV_FILE_ID" target="_blank" class="btn-ghost">
                                 Download CV
                                 <i data-lucide="download" style="width:13px;height:13px;stroke-width:2;"></i>
+                            </a>
+                            <a href="https://mnmkstudio.com" target="_blank" rel="noopener noreferrer"
+                                class="btn-ghost">
+                                View Portfolio
+                                <i data-lucide="external-link" style="width:13px;height:13px;stroke-width:2;"></i>
                             </a>
                         </div>
                     </div>
