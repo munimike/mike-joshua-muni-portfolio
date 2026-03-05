@@ -26,13 +26,13 @@
 
 ## CTAs (Current)
 1. Let's Collaborate → `mailto:mikeatwork98@gmail.com`
-2. Download CV → Google Drive placeholder (UPDATE WITH REAL LINK)
-3. View Portfolio → `https://mnmkstudio.com`
+2. Download CV → `https://drive.google.com/uc?export=download&id=1w6tdXOxaj2TVMdOhSsfcf0cKH3ELYJI3`
+3. View Portfolio → `https://drive.google.com/drive/folders/1wZGFG7oFiBPDEyWiJ_jWGvGS9gZXa-Ru?usp=sharing`
 
 ## Pending Updates
-- [ ] Replace Download CV Google Drive placeholder with real PDF link
-- [ ] Upload `img/hero.jpg` (custom hero banner photo)
-- [ ] Upload `img/profile.jpg` (headshot / profile photo)
+- [x] Replace Download CV Google Drive placeholder with real PDF link
+- [x] Upload `img/hero.jpg` (custom hero banner photo)
+- [x] Upload `img/profile.jpg` (headshot / profile photo)
 - [ ] Connect GitHub repo to Vercel for automatic git-push deploys
 - [ ] Update `README.md` with final Vercel URL alias
 
